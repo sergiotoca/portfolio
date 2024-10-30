@@ -1,0 +1,75 @@
+<div class="card px-4 py-8 md:px-6 lg:px-8">
+    <div class="flex flex-wrap mb-4">
+        <div class="w-full lg:w-6 pl-0 lg:pr-4">
+            <img src="assets/images/blocks/about/about-1.jpg" alt="Image" class="w-full border-round">
+        </div>
+        <div class="w-full lg:w-6 pr-0 lg:pl-4 mt-3 lg:mt-0">
+            <div class="font-bold text-4xl mb-4 text-900">About me</div>
+            <p class="line-height-3 mt-0 mb-3 p-0">
+                Hello, I'm Sergio Toledo, a software engineer with a strong background in Control and Automation Engineering.
+                I recently graduated from Georgian College's Computer Programming program and am currently working as a Software Engineer,
+                where I focus on full-stack development, creating innovative solutions that enhance efficiency and make a meaningful impact.
+            </p>
+            <p class="line-height-3 mt-0 mb-3 p-0">
+                My journey in technology is rooted in curiosity and a drive to bridge the gap between engineering and practical problem-solving.
+                I transitioned from a production management role, where I honed my understanding of industrial workflows, to software development,
+                motivated by the potential to craft tools that streamline operations and foster innovation.
+            </p>
+            <p class="line-height-3 my-0 p-0">
+                During my 8-month internship with Ontario Power Generation, I worked on projects that transformed business process monitoring and management.
+                I developed web applications and data analytics tools, led the creation of a Project Charter for a major renovation project,
+                automated operational reminders using Python, and leveraged Power BI to turn complex data into actionable insights.
+            </p>
+        </div>
+    </div>
+    <div class="mt-3 md:mt-8">
+        <span class="block text-900 font-bold text-3xl mb-3 text-center">Outside the Office </span>
+        <div class="text-center text-lg line-height-3 mb-6">How I recharge and stay inspired</div>
+        <div class="grid">
+            <div class="col-12 md:col-6 lg:col-3 p-3">
+                <div class="relative overflow-hidden" (mouseenter)="visibleMember = 0" (mouseleave)="visibleMember = -1">
+                    <img src="assets/images/blocks/team/guitar.jpg" class="w-full block" />
+                    <div class="absolute top-0 left-0 h-full w-full border-round fadein animation-duration-300 select-none" style="background-color: rgba(0,0,0,0.7)" *ngIf="visibleMember === 0" >
+                        <div class="flex flex-column p-5 h-full">
+                            <span class="block font-medium text-white text-xl mb-3">Guitar Enthusiast</span>
+                            <span class="font-medium text-400"> I love playing guitar and exploring music as a creative outlet</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 md:col-6 lg:col-3 p-3">
+                <div class="relative overflow-hidden" (mouseenter)="visibleMember = 1" (mouseleave)="visibleMember = -1">
+                    <img src="assets/images/blocks/team/sergio.jpg" class="w-full block" />
+                    <div class="absolute top-0 left-0 h-full w-full border-round fadein animation-duration-300 select-none" style="background-color: rgba(0,0,0,0.7)" *ngIf="visibleMember === 1" >
+                        <div class="flex flex-column p-5 h-full">
+                            <span class="block font-medium text-white text-xl mb-3">Travel Lover</span>
+                            <span class="font-medium text-400">Exploring new places and cultures excites me, from local spots to far-off destinations.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 md:col-6 lg:col-3 p-3">
+                <div class="relative overflow-hidden" (mouseenter)="visibleMember = 2" (mouseleave)="visibleMember = -1">
+                    <img src="assets/images/blocks/team/family.jpg" class="w-full block" />
+                    <div class="absolute top-0 left-0 h-full w-full border-round fadein animation-duration-300 select-none" style="background-color: rgba(0,0,0,0.7)" *ngIf="visibleMember === 2" >
+                        <div class="flex flex-column p-5 h-full">
+                            <span class="block font-medium text-white text-xl mb-3">Family Time</span>
+                            <span class="font-medium text-400">Spending quality time with family is a core part of who I am.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 md:col-6 lg:col-3 p-3">
+                <div class="relative overflow-hidden" (mouseenter)="visibleMember = 3" (mouseleave)="visibleMember = -1">
+                    <img src="assets/images/blocks/team/technology.jpg" class="w-full block" />
+                    <div class="absolute top-0 left-0 h-full w-full border-round fadein animation-duration-300 select-none" style="background-color: rgba(0,0,0,0.7)" *ngIf="visibleMember === 3" >
+                        <div class="flex flex-column p-5 h-full">
+                            <span class="block font-medium text-white text-xl mb-3">Tech Explorer</span>
+                            <span class="font-medium text-400">I’m passionate about new tech and always curious about innovations.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

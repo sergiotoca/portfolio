@@ -1,0 +1,160 @@
+<div class="relative flex flex-column justify-content-center">
+    <div class="bg-circle opacity-50" style="top: -200px; left: -700px;"></div>
+    <div class="bg-circle hidden lg:flex" style="top: 50px; right:-800px; transform: rotate(60deg)"></div>
+    <div class="landing-wrapper">
+        <div
+            class="flex align-items-center justify-content-between relative lg:static py-6 px-4 mx-0 md:px-7 lg:px-8 lg:py-6 lg:mx-8">
+            <a class="cursor-pointer" (click)="router.navigate(['/landing'])">
+                <img src="assets/layout/images/sergio.svg" alt="Logo" style="width: 130%;">
+            </a>
+            <a pRipple class="cursor-pointer block md:hidden text-700 text-primary" pStyleClass="@next"
+                enterFromClass="ng-hidden" enterActiveClass="px-fadein" leaveToClass="ng-hidden"
+                leaveActiveClass="px-fadeout" [hideOnOutsideClick]="true">
+                <i class="pi pi-bars text-4xl"></i>
+            </a>
+            <ul #menu  style="top:80px; right: 0%;"
+                class="list-none  p-3 md:p-0  justify-content-end ng-hidden md:flex absolute md:static w-full md:w-6 md:px-0 z-3 shadow-2 md:shadow-none  surface-card md:surface-ground">
+                <a pRipple class="cursor-pointer block md:hidden text-700 text-primary absolute z-5" style="top:1.5rem;
+                right: 1.5rem;" pRipple pStyleClass="@parent"
+                        enterFromClass="ng-hidden" enterActiveClass="px-fadein" leaveToClass="ng-hidden" leaveActiveClass="px-fadeout">
+                    <i class="pi pi-times text-3xl"></i>
+                </a>
+
+                <li class=" md:mt-0">
+                    <a (click)="scrollToSection('home')" pRipple pStyleClass="@grandparent"
+                        enterFromClass="ng-hidden" enterActiveClass="px-fadein" leaveToClass="ng-hidden"
+                        class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3 cursor-pointer">
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="scrollToSection('about')" pRipple pStyleClass="@grandparent"
+                        enterFromClass="ng-hidden" enterActiveClass="px-fadein" leaveToClass="ng-hidden"
+                        class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3 cursor-pointer">
+                        <span>About Me</span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="scrollToSection('projects')" pRipple pStyleClass="@grandparent"
+                        enterFromClass="ng-hidden" enterActiveClass="px-fadein" leaveToClass="ng-hidden"
+                        class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3 cursor-pointer">
+                        <span>Projects</span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="scrollToSection('skills')" pRipple pStyleClass="@grandparent"
+                        enterFromClass="ng-hidden" enterActiveClass="px-fadein" leaveToClass="ng-hidden"
+                        class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3 cursor-pointer">
+                        <span>Skills</span>
+                    </a>
+                </li>
+            </ul>
+         
+        </div>
+        <div class="py-4 px-4 mx-0 md:mx-6 lg:mx-8 z-2">
+            <div id="home"
+                class="grid grid-nogutter justify-content-between align-items-center mb-6 py-6 md:mb-8 md:py-8">
+                <div
+                    class="col-12 md:col-4 flex flex-column gap-4 flex-order-1 md:flex-order-0 align-items-center md:align-items-start text-center md:text-left">
+                    <span class="block text-900 font-bold text-4xl">Hello, I'm Sergio!</span>
+                    <span class="block text-700 text-lg">I'm a software engineer with a passion for building impactful technology solutions and exploring creative projects. I love learning new technologies and finding innovative ways to solve problems.</span>
+                    <ul class="flex flex-wrap gap-5 list-none p-0">
+                        <li class="flex align-items-center">
+                            <div class="p-1 border-circle bg-green-400 inline-block mr-2"></div>
+                            <span class="text-900 font-semibold">Javascript</span>
+                        </li>
+                        <li class="flex align-items-center">
+                            <div class="p-1 border-circle bg-green-400 inline-block mr-2"></div>
+                            <span class="text-900 font-semibold">TypeScript</span>
+                        </li>
+                        <li class="flex align-items-center">
+                            <div class="p-1 border-circle bg-green-400 inline-block mr-2"></div>
+                            <span class="text-900 font-semibold">Angular</span>
+                        </li>
+                    </ul>
+                    <button pButton pRipple type="button" label="View Projects" icon="pi pi-arrow-right" iconPos="right"
+                        class="w-12rem p-button-outlined" [routerLink]="['/pages/projects']">
+                    </button>
+                </div>
+
+                <div class="col-12 md:col-7 flex-order-0 md:flex-order-1 mb-6 md:mb-0 border-round">
+                    <img animateEnter="moveinright"
+                        src="assets/images/blocks/team/sergio1.jpg" alt=""
+                        class="w-full h-full border-round shadow-2 animation-duration-1000 animation-ease-out">
+                </div>
+            </div>
+
+            <div id="about" class="my-6 md:my-8">
+                <span class="text-900 block font-bold text-5xl mb-4 text-center">About Me</span>
+                <span class="text-700 block text-xl mb-8 text-center line-height-3">I'm originally from Brazil and currently based in Canada. I recently completed a co-op work term at Ontario Power Generation (OPG), and now I am excited to continue my career as a software engineer.</span>
+            </div>
+
+            <div id="projects" class="my-6 md:my-8">
+                <span class="text-900 block font-bold text-5xl mb-4 text-center">Projects</span>
+                <span class="text-700 block text-xl mb-8 text-center line-height-3">Here are some of the projects I've worked on, showcasing my skills in web and mobile development, image recognition, and more.</span>
+                <div class="flex flex-column lg:flex-row align-items-center justify-content-between mt-8 gap-8">
+                    <div class="flex flex-column align-items-center">
+                        <img animateEnter="scalein"
+                            src="assets/images/projects/bookhaven.png" alt="chat"
+                            class="w-full h-full border-round surface-border shadow-2 animation-duration-500 origin-top">
+                        <span class="block text-900 text-lg font-semibold mt-4">BookHavenApp</span>
+                    </div>
+                    <div class="flex flex-column align-items-center">
+                        <img animateEnter="scalein"
+                            src="assets/images/projects/togolist.png" alt="chat"
+                            class="w-full h-full border-round surface-border shadow-2 animation-duration-500 origin-top">
+                        <span class="block text-900 text-lg font-semibold mt-4">ToGoList App</span>
+                    </div>
+                </div>
+            </div>
+            <div id="skills" class="my-6 md:my-8">
+                <span class="text-900 font-bold text-5xl mb-4 text-center block">Skills</span>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <span class="text-900 text-lg font-semibold mb-2 block">JavaScript</span>
+                        <p-knob [(ngModel)]="knobValueJavaScript" valueTemplate="{value}%" [readonly]="true" [strokeWidth]="2" [size]="90"></p-knob>
+                    </div>
+                    <div class="skill-item">
+                        <span class="text-900 text-lg font-semibold mb-2 block">TypeScript</span>
+                        <p-knob [(ngModel)]="knobValueTypeScript" valueTemplate="{value}%" [readonly]="true" [strokeWidth]="2" [size]="90"></p-knob>
+                    </div>
+                    <div class="skill-item">
+                        <span class="text-900 text-lg font-semibold mb-2 block">Angular</span>
+                        <p-knob [(ngModel)]="knobValueAngular" valueTemplate="{value}%" [readonly]="true" [strokeWidth]="2" [size]="90"></p-knob>
+                    </div>
+                    <div class="skill-item">
+                        <span class="text-900 text-lg font-semibold mb-2 block">.NET Core</span>
+                        <p-knob [(ngModel)]="knobValueDotNetCore" valueTemplate="{value}%" [readonly]="true" [strokeWidth]="2" [size]="90"></p-knob>
+                    </div>
+                    <div class="skill-item">
+                        <span class="text-900 text-lg font-semibold mb-2 block">ASP.NET</span>
+                        <p-knob [(ngModel)]="knobValueAspNet" valueTemplate="{value}%" [readonly]="true" [strokeWidth]="2" [size]="90"></p-knob>
+                    </div>
+                    <div class="skill-item">
+                        <span class="text-900 text-lg font-semibold mb-2 block">SQL</span>
+                        <p-knob [(ngModel)]="knobValueSQL" valueTemplate="{value}%" [readonly]="true" [strokeWidth]="2" [size]="90"></p-knob>
+                    </div>
+                    <div class="skill-item">
+                        <span class="text-900 text-lg font-semibold mb-2 block">DAX</span>
+                        <p-knob [(ngModel)]="knobValueDAX" valueTemplate="{value}%" [readonly]="true" [strokeWidth]="2" [size]="90"></p-knob>
+                    </div>
+                    <div class="skill-item">
+                        <span class="text-900 text-lg font-semibold mb-2 block">DevOps</span>
+                        <p-knob [(ngModel)]="knobValueAzureDevOps" valueTemplate="{value}%" [readonly]="true" [strokeWidth]="2" [size]="90"></p-knob>
+                    </div>
+                    <div class="skill-item">
+                        <span class="text-900 text-lg font-semibold mb-2 block">React</span>
+                        <p-knob [(ngModel)]="knobValueReact" valueTemplate="{value}%" [readonly]="true" [strokeWidth]="2" [size]="90"></p-knob>
+                    </div>
+                    <div class="skill-item">
+                        <span class="text-900 text-lg font-semibold mb-2 block">Python</span>
+                        <p-knob [(ngModel)]="knobValuePython" valueTemplate="{value}%" [readonly]="true" [strokeWidth]="2" [size]="90"></p-knob>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="card">
+    <p-dataView [value]="totalProjects" [paginator]="true" [rows]="6" filterBy="title" [sortField]="sortField" [sortOrder]="-1" layout="grid">
+        <ng-template pTemplate="header">
+            <div class="flex flex-column sm:flex-row sm:align-items-center sm:justify-content-between gap-3">
+                <span class="text-xl text-900 font-semibold">Projects</span>
+                <p-dropdown [options]="sortOptions" [(ngModel)]="sortField" placeholder="Sort by" styleClass="w-full md:w-15rem" (onChange)="onSortChange($event)"></p-dropdown>
+            </div>
+        </ng-template>
+        
+        <ng-template let-projects pTemplate="gridItem">
+            <div class="grid grid-nogutter">
+                <div class="col-12 md:col-4" *ngFor="let project of projects">
+                    <app-project-card [project]="project"></app-project-card>
+                </div>
+            </div>
+        </ng-template>
+    </p-dataView>
+</div>

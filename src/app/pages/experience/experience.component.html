@@ -1,0 +1,26 @@
+<div class="card">
+    <h5>Experience</h5>
+    <p-timeline [value]="experiences" align="alternate" styleClass="customized-timeline">
+        <ng-template pTemplate="marker" let-experience>
+            <span class="flex z-1 w-2rem h-2rem align-items-center justify-content-center text-white border-circle shadow-2" [style.backgroundColor]="experience.color">
+                <i [ngClass]="experience.icon"></i>
+            </span>
+        </ng-template>
+        <ng-template pTemplate="content" let-experience>
+            <p-card [header]="experience.position" [subheader]="experience.date + ' | ' + experience.location">
+                <img *ngIf="experience.image" [src]="'assets/images/product/' + experience.image" [alt]="experience.name" class="shadow-2 p-3 w-20rem" />
+                <p class="line-height-3 my-2"><strong>{{ experience.company }}</strong></p>
+                <p class="line-height-3 my-3">{{ experience.description }}</p>
+
+                <!-- Modern bullet points section -->
+                <div class="skills-container">
+                    <ul class="skills-list">
+                        <li *ngFor="let task of experience.tasks" class="skill-item">
+                            <i class="pi pi-circle-on skill-icon" [ngStyle]="{ 'color': experience.color }"></i> {{ task }}
+                        </li>
+                    </ul>
+                </div>
+            </p-card>
+        </ng-template>
+    </p-timeline>
+</div>

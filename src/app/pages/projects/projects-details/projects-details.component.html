@@ -1,0 +1,85 @@
+<div class="card">
+    <!-- Project Title and Information -->
+    <div class="flex justify-content-between flex-column-reverse md:flex-row align-items-center">
+        <div>
+            <div class="text-xl text-900 mb-4 mt-4 md:mt-0 text-center md:text-left font-semibold md:pr-4">
+                {{ project?.title }}
+            </div>
+            <div class="flex flex-wrap justify-content-center md:justify-content-start gap-3">
+                <!-- Project Timeline -->
+                <span class="inline-flex align-items-center py-2 px-3 font-medium border-1 surface-border border-round">
+                    <i class="pi pi-clock text-primary mr-2"></i>
+                    <span class="text-900">{{ project?.month }} {{ project?.year }}</span>
+                </span>
+                <!-- Project Status -->
+                <span class="inline-flex align-items-center py-2 px-3 font-medium border-1 surface-border border-round">
+                    <i class="pi pi-tag text-primary mr-2"></i>
+                    <span class="text-900">{{ project?.status }}</span>
+                </span>
+            </div>
+        </div>
+        <div>
+            <button pButton pRipple label="Return to Projects" class="p-button-outlined p-button-secondary" [routerLink]="['/pages/projects']"></button>
+        </div>
+    </div>
+
+    <!-- Project Cover Image -->
+    <div class="flex justify-content-center align-items-center text-center my-6 h-30rem overflow-hidden">
+        <img [src]="project?.coverImage" alt="{{ project?.title }}" 
+            class="object-cover max-h-full max-w-full w-auto h-auto border-round shadow-5">
+    </div>
+
+    <!-- Long Description -->
+    <div class="text-2xl text-900 mb-4 font-semibold">Project Overview</div>
+    <p class="line-height-3 text-lg mb-4">
+        {{ project?.longDescription }}
+    </p>
+
+    <!-- Technologies Used -->
+    <div *ngIf="project">
+        <div class="text-2xl text-900 mb-4 font-semibold">Technologies Used</div>
+        <div *ngIf= "project" class="flex flex-wrap gap-2">
+            <span *ngFor="let tech of project?.technologies" class="inline-flex align-items-center py-2 px-3 font-medium border-1 surface-border border-round mb-4">
+                <i class="pi pi-code text-primary mr-2"></i>
+                <span class="text-900">{{ tech }}</span>
+            </span>
+        </div>
+        
+    </div>
+
+    <!-- Project Tags -->
+    <div class="text-2xl text-900 mb-4 font-semibold">Tags</div>
+    <div *ngIf= "project" class="flex flex-wrap gap-2">
+        <span *ngFor="let tag of project?.tags" class="inline-flex align-items-center py-2 px-3 font-medium border-1 surface-border border-round mb-4">
+            <i class="pi pi-hashtag text-primary mr-2"></i>
+            <span class="text-900">{{ tag }}</span>
+        </span>
+    </div>
+
+    <!-- Project Actions -->
+    <div class="flex flex-column sm:flex-row my-8 w-full gap-3">
+        <div *ngIf="project">
+            <a [href]="project.githubLink" target="_blank" rel="noopener noreferrer">
+                <button pButton pRipple icon="pi pi-github" class="p-button-secondary" label="View on GitHub"></button>
+            </a>
+        </div>          
+        <!-- <button pButton pRipple icon="pi pi-external-link" class="p-button-secondary" label="Live Demo" *ngIf="project?.demoLink" [routerLink]="project?.demoLink" target="_blank"></button> -->
+        <!-- <button pButton pRipple icon="pi pi-pencil" class="sm:ml-auto" label="Edit Project"></button> -->
+    </div>
+
+    <!-- Optional Additional Information or Interaction Components -->
+    <!-- <div class="text-2xl text-900 mb-4 font-semibold">Additional Information</div>
+    <p class="line-height-3 text-lg mb-4">
+        This section could be used to provide extra notes or comments related to the project, user testimonials, or any specific lessons learned.
+    </p> -->
+
+    <!-- Social Sharing Options -->
+    <!-- <div class="flex flex-column sm:flex-row my-8 w-full gap-3">
+        <button pButton pRipple icon="pi pi-twitter" class="p-button-secondary" label="Twitter"></button>
+        <button pButton pRipple icon="pi pi-facebook" class="p-button-secondary" label="Facebook"></button>
+    </div> -->
+
+    <!-- Comments Section -->
+    <!-- <app-blog-comments [comments]="comments"></app-blog-comments>
+    <app-new-comment></app-new-comment> -->
+</div>

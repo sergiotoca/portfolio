@@ -1,0 +1,32 @@
+<div class="p-3" *ngIf="project">
+    <div class="surface-100 hover:surface-200 cursor-pointer z-index border-round" (click)="navigateToDetail()">
+        <div class="relative flex align-items-center justify-content-center overflow-hidden">
+            <img [src]="project.coverImage" class="w-auto h-15rem"  />
+            <!-- <img [src]="project.profile" class="flex absolute w-4rem h-4rem" style="bottom: -1.5rem; right: 1.5rem"> -->
+        </div>
+        <div class="p-3">
+            <div class="text-900 font-semibold text-xl mb-3">{{ project.title }}</div>
+            <p class="text-700 text-lg mt-0 mb-5">{{ project.description }}</p>
+        
+            <div class="flex flex-wrap gap-2 align-items-center justify-content-between">
+                <!-- Technologies Used -->
+                <span class="flex align-items-center text-900">
+                    <i class="pi pi-cog mr-2"></i>
+                    <span class="font-semibold">{{ project.technologies?.join(', ') || 'No technologies listed' }}</span>
+                </span>
+                
+                <!-- GitHub Link -->
+                <span class="flex align-items-center text-900">
+                    <i class="pi pi-github mr-2"></i>
+                    <a [href]="project.githubLink" target="_blank" class="font-semibold no-underline text-indigo-500">View on GitHub</a>
+                </span>
+        
+                <!-- Project Timeline -->
+                <span class="flex align-items-center text-900">
+                    <i class="pi pi-clock mr-2"></i>
+                    <span class="font-semibold">{{ project.month }} {{ project.year }}</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="card">
+    <h5>Education Background</h5>
+    <p-timeline [value]="events" align="alternate" styleClass="customized-timeline">
+        <ng-template pTemplate="marker" let-event>
+        <span class="flex z-1 w-2rem h-2rem align-items-center justify-content-center text-white border-circle shadow-2" [style.backgroundColor]="event.color">
+            <i [ngClass]="event.icon"></i>
+        </span>
+        </ng-template>
+        <ng-template pTemplate="content" let-event>
+            <p-card [header]="event.institution" [subheader]="event.date">
+                <img *ngIf="event.image" [src]="'assets/images/product/' + event.image" [alt]="event.name" class="shadow-2 p-3 w-20rem" />
+                <p class="line-height-3 my-2"><strong>{{ event.credential }}</strong></p>
+                <p class="line-height-3 my-3">{{ event.text }}</p>
+
+                <!-- Modern bullet points section -->
+                <div class="skills-container">
+                    <ul class="skills-list">
+                        <li *ngFor="let skill of event.skills" class="skill-item">
+                            <i class="pi pi-circle-on skill-icon" [ngStyle]="{ 'color': event.color }"></i> {{ skill }}
+                        </li>
+                    </ul>
+                </div>
+
+                <p class="line-height-3 my-3">{{ event.text1 }}</p>
+                <button pButton 
+                        label="Read more" 
+                        class="p-button-outlined mb-5" 
+                        (click)="goToLink(event.link)">
+                </button>
+            </p-card>
+        </ng-template>
+    </p-timeline>
+</div>
