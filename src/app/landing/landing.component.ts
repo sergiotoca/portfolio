@@ -24,17 +24,18 @@ export class LandingComponent implements OnDestroy {
         this.subscription.unsubscribe();
     }
 
-    // Skill values for the knobs
-    knobValueJavaScript: number = 80;
-    knobValueTypeScript: number = 70;
-    knobValueAngular: number = 70;
-    knobValueDotNetCore: number = 60;
-    knobValueAspNet: number = 80;
-    knobValueSQL: number = 90;
-    knobValueDAX: number = 30;
-    knobValueAzureDevOps: number = 50;
-    knobValueReact: number = 90;
-    knobValuePython: number = 75;
+    skills = [
+        { name: 'JavaScript', value: 80 },
+        { name: 'TypeScript', value: 70 },
+        { name: 'Angular', value: 85 },
+        { name: '.NET Core', value: 75 },
+        { name: 'ASP.NET', value: 65 },
+        { name: 'SQL', value: 90 },
+        { name: 'DAX', value: 60 },
+        { name: 'DevOps', value: 70 },
+        { name: 'React', value: 80 },
+        { name: 'Python', value: 85 }
+      ];
 
     scrollToSection(sectionId: string) {
         const element = document.getElementById(sectionId);

@@ -110,46 +110,10 @@
             <div id="skills" class="my-6 md:my-8">
                 <span class="text-900 font-bold text-5xl mb-4 text-center block">Skills</span>
                 <div class="skills-grid">
-                    <div class="skill-item">
-                        <span class="text-900 text-lg font-semibold mb-2 block">JavaScript</span>
-                        <p-knob [(ngModel)]="knobValueJavaScript" valueTemplate="{value}%" [readonly]="true" [strokeWidth]="2" [size]="90"></p-knob>
-                    </div>
-                    <div class="skill-item">
-                        <span class="text-900 text-lg font-semibold mb-2 block">TypeScript</span>
-                        <p-knob [(ngModel)]="knobValueTypeScript" valueTemplate="{value}%" [readonly]="true" [strokeWidth]="2" [size]="90"></p-knob>
-                    </div>
-                    <div class="skill-item">
-                        <span class="text-900 text-lg font-semibold mb-2 block">Angular</span>
-                        <p-knob [(ngModel)]="knobValueAngular" valueTemplate="{value}%" [readonly]="true" [strokeWidth]="2" [size]="90"></p-knob>
-                    </div>
-                    <div class="skill-item">
-                        <span class="text-900 text-lg font-semibold mb-2 block">.NET Core</span>
-                        <p-knob [(ngModel)]="knobValueDotNetCore" valueTemplate="{value}%" [readonly]="true" [strokeWidth]="2" [size]="90"></p-knob>
-                    </div>
-                    <div class="skill-item">
-                        <span class="text-900 text-lg font-semibold mb-2 block">ASP.NET</span>
-                        <p-knob [(ngModel)]="knobValueAspNet" valueTemplate="{value}%" [readonly]="true" [strokeWidth]="2" [size]="90"></p-knob>
-                    </div>
-                    <div class="skill-item">
-                        <span class="text-900 text-lg font-semibold mb-2 block">SQL</span>
-                        <p-knob [(ngModel)]="knobValueSQL" valueTemplate="{value}%" [readonly]="true" [strokeWidth]="2" [size]="90"></p-knob>
-                    </div>
-                    <div class="skill-item">
-                        <span class="text-900 text-lg font-semibold mb-2 block">DAX</span>
-                        <p-knob [(ngModel)]="knobValueDAX" valueTemplate="{value}%" [readonly]="true" [strokeWidth]="2" [size]="90"></p-knob>
-                    </div>
-                    <div class="skill-item">
-                        <span class="text-900 text-lg font-semibold mb-2 block">DevOps</span>
-                        <p-knob [(ngModel)]="knobValueAzureDevOps" valueTemplate="{value}%" [readonly]="true" [strokeWidth]="2" [size]="90"></p-knob>
-                    </div>
-                    <div class="skill-item">
-                        <span class="text-900 text-lg font-semibold mb-2 block">React</span>
-                        <p-knob [(ngModel)]="knobValueReact" valueTemplate="{value}%" [readonly]="true" [strokeWidth]="2" [size]="90"></p-knob>
-                    </div>
-                    <div class="skill-item">
-                        <span class="text-900 text-lg font-semibold mb-2 block">Python</span>
-                        <p-knob [(ngModel)]="knobValuePython" valueTemplate="{value}%" [readonly]="true" [strokeWidth]="2" [size]="90"></p-knob>
-                    </div>
+                  <div class="skill-item" *ngFor="let skill of skills">
+                    <span class="text-900 text-lg font-semibold mb-2 block">{{ skill.name }}</span>
+                    <p-knob [(ngModel)]="skill.value" valueTemplate="{value}%" [readonly]="true" [strokeWidth]="2" [size]="90"></p-knob>
+                  </div>
                 </div>
             </div>
             

@@ -45,6 +45,32 @@ export class ProjectsService {
       githubLink: 'https://github.com/sergiotoca/ToGoList',
       status: 'Completed',
       tags: ['Mobile Development', 'Travel', 'Productivity']
+    },
+    {
+      id: '4', 
+      title: 'Entangled - Escape Adventure Game', 
+      description: 'An escape adventure game with retro RPG-style graphics, developed using Java Swing.', // Short description
+      longDescription: 'Entangled is a pixel-art escape adventure game inspired by classic Gameboy RPGs, developed using Java Swing. In the current chapter, players find themselves on a mysterious island and must interact with objects, collect items, and solve puzzles to find their way out. The game leverages a frame updating mechanism and tile mapping engineering, creating a smooth gameplay experience with efficient resource handling. This project offered valuable hands-on experience with Java Swing for game development, particularly in implementing dynamic updates and mapping techniques.', // Long description
+      coverImage: 'assets/images/projects/Entangled.jpg', 
+      year: '2022', 
+      month: 'December',
+      technologies: ['Java Swing'],
+      githubLink: 'https://github.com/sergiotoca/Entangled',
+      status: 'In Progress',
+      tags: ['Game Development', 'Escape Adventure', 'Retro RPG', 'Java Swing']
+    },
+    {
+      id: '5', 
+      title: 'Space Escape - The Invader\'s Perspective', 
+      description: 'A Python game where players experience the view of the invader avoiding imperial troops’ attacks.', // Short description
+      longDescription: 'Space Escape is a Python game developed using the Turtle library, offering a unique twist on the classic Space Invaders. Instead of defending against invaders, players experience the game from the perspective of an invader, dodging random attacks from imperial troops. The game features horizontal movement using arrow keys, random shooting mechanics from the top of the screen, and score tracking. With sound effects and a fast-paced gameplay experience, Space Escape challenges players to survive as long as possible in a hostile environment.', // Long description
+      coverImage: 'assets/images/projects/game.jpg', 
+      year: '2023', 
+      month: 'April',
+      technologies: ['Python', 'Turtle'],
+      githubLink: 'https://github.com/sergiotoca/Space-Escape',
+      status: 'Completed',
+      tags: ['Game Development', 'Python', 'Turtle', 'Arcade Game']
     }
   ];
   
