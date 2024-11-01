@@ -38,4 +38,10 @@
 .skill-item {
     width: 100px;
     text-align: center;
+    transition: transform 0.2s ease;
+    cursor:default;
+}
+
+.skill-item:hover {
+    transform: scale(1.30); /* Slightly enlarge on hover */
 }

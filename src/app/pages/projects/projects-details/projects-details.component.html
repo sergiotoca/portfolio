@@ -36,24 +36,25 @@
     </p>
 
     <!-- Technologies Used -->
-    <div *ngIf="project">
+    <div *ngIf="project" class="technologies-container">
         <div class="text-2xl text-900 mb-4 font-semibold">Technologies Used</div>
-        <div *ngIf= "project" class="flex flex-wrap gap-2">
-            <span *ngFor="let tech of project?.technologies" class="inline-flex align-items-center py-2 px-3 font-medium border-1 surface-border border-round mb-4">
-                <i class="pi pi-code text-primary mr-2"></i>
+        <div *ngIf="project" class="flex flex-wrap gap-2">
+            <span *ngFor="let tech of project?.technologies" class="tech-item inline-flex align-items-center py-2 px-3 font-medium mb-4">
+                <i class="pi pi-code tech-icon mr-2"></i>
                 <span class="text-900">{{ tech }}</span>
             </span>
         </div>
-        
     </div>
 
     <!-- Project Tags -->
-    <div class="text-2xl text-900 mb-4 font-semibold">Tags</div>
-    <div *ngIf= "project" class="flex flex-wrap gap-2">
-        <span *ngFor="let tag of project?.tags" class="inline-flex align-items-center py-2 px-3 font-medium border-1 surface-border border-round mb-4">
-            <i class="pi pi-hashtag text-primary mr-2"></i>
-            <span class="text-900">{{ tag }}</span>
-        </span>
+    <div class="tags-container">
+        <div class="text-2xl text-900 mb-4 font-semibold">Tags</div>
+        <div *ngIf="project" class="flex flex-wrap gap-2">
+            <span *ngFor="let tag of project?.tags" class="tag-item inline-flex align-items-center py-2 px-3 font-medium mb-4">
+                <i class="pi pi-hashtag tag-icon mr-2"></i>
+                <span class="text-900">{{ tag }}</span>
+            </span>
+        </div>
     </div>
 
     <!-- Project Actions -->
