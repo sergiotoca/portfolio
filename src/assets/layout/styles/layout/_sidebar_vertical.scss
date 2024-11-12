@@ -43,15 +43,13 @@
 
         .layout-root-menuitem {
             > .layout-menuitem-root-text {
-                font-size: .857rem;
-                text-transform: uppercase;
-                font-weight: 700;
-                color: var(--root-menuitem-text-color);
-                padding: 1rem 2rem;
+                display: none;
             }
     
             > a {
-                display: none;
+                display: flex;
+                color: var(--root-menuitem-text-color);
+                padding: 1rem 2rem;
             }
         }
 

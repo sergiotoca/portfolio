@@ -8,7 +8,7 @@
         </ng-template>
         <ng-template pTemplate="content" let-experience>
             <p-card [header]="experience.position" [subheader]="experience.date + ' | ' + experience.location">
-                <img *ngIf="experience.image" [src]="'assets/images/product/' + experience.image" [alt]="experience.name" class="shadow-2 p-3 w-20rem" />
+                <img *ngIf="experience.image" [src]="'assets/images/product/' + experience.image" [alt]="experience.name" class="shadow-2 p-3 w-full md:w-20rem" />
                 <p class="line-height-3 my-2"><strong>{{ experience.company }}</strong></p>
                 <p class="line-height-3 my-3">{{ experience.description }}</p>
 

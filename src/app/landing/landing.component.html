@@ -4,7 +4,7 @@
     <div class="landing-wrapper">
         <div
             class="flex align-items-center justify-content-between relative lg:static py-6 px-4 mx-0 md:px-7 lg:px-8 lg:py-6 lg:mx-8">
-            <a class="cursor-pointer" (click)="router.navigate(['/landing'])">
+            <a class="cursor-pointer" (click)="router.navigate(['/'])">
                 <img src="assets/layout/images/sergio.svg" alt="Logo" style="width: 130%;">
             </a>
             <a pRipple class="cursor-pointer block md:hidden text-700 text-primary" pStyleClass="@next"
@@ -107,10 +107,10 @@
                     </div>
                 </div>
             </div>
-            <div id="skills" class="my-6 md:my-8">
+            <div id="skills" class="my-6 md:my-8 ">
                 <span class="text-900 font-bold text-5xl mb-4 text-center block">Skills</span>
-                <div class="skills-grid">
-                    <div class="skill-item" *ngFor="let skill of skills" (mouseenter)="startHover(skill)" (mouseleave)="endHover(skill)">
+                <div class="skills-grid grid">
+                    <div class="skill-item xl:col-2 lg:col-4 md:col-4 sm:col-8 transition-duration-500 text-center" *ngFor="let skill of skills" (mouseenter)="startHover(skill)" (mouseleave)="endHover(skill)">
                         <span class="text-900 text-lg font-semibold mb-2 block">{{ skill.name }}</span>
                         <p-knob [(ngModel)]="skill.hoverValue" valueTemplate="{value}%" [readonly]="true" [strokeWidth]="2" [size]="90"></p-knob>
                     </div>

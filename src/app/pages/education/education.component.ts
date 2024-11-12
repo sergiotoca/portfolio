@@ -35,7 +35,7 @@ export class EducationComponent {
         skills: [
           'Advanced Control Systems',
           'Industrial Instrumentation',
-          'Microcontrollers/Microprocessors',
+          'Microcontrollers',
           'Digital Electronics',
           'SCADA Systems',
           'Power Electronics and Controlled Drives',

@@ -4,6 +4,7 @@ import { filter, Subscription } from 'rxjs';
 import { MenuService } from './app.menu.service';
 import { AppSidebarComponent } from './app.sidebar.component';
 import { LayoutService } from './service/app.layout.service';
+import { AppTopbarComponent } from './app.topbar.component';
 
 @Component({
     selector: 'app-layout',
@@ -17,6 +18,8 @@ export class AppLayoutComponent implements OnDestroy {
     menuScrollListener: any;
 
     @ViewChild(AppSidebarComponent) appSidebar!: AppSidebarComponent;
+
+    @ViewChild(AppTopbarComponent) appTopbar!: AppTopbarComponent;
 
     constructor(
         private menuService: MenuService,
@@ -36,6 +39,12 @@ export class AppLayoutComponent implements OnDestroy {
                                     event.target
                                 ) ||
                                 this.appSidebar.el.nativeElement.contains(
+                                    event.target
+                                ) ||
+                                this.appTopbar.menuButton.nativeElement.isSameNode(
+                                    event.target
+                                ) ||
+                                this.appTopbar.menuButton.nativeElement.contains(
                                     event.target
                                 )
                             );
