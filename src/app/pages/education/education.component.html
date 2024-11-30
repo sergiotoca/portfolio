@@ -1,53 +1,79 @@
 <div class="card">
     <h5 class="text-center mb-3">Education Background</h5>
-    <p-timeline [value]="events" align="alternate" styleClass="customized-timeline">
-        <ng-template pTemplate="marker" let-event>
-            <span 
-                class="flex align-items-center justify-content-center text-white border-circle shadow-2 w-3rem h-3rem md:w-2rem md:h-2rem" 
-                [style.backgroundColor]="event.color">
-                <i [ngClass]="event.icon" class="text-xl md:text-lg"></i>
-            </span>
-        </ng-template>
-
-        <ng-template pTemplate="content" let-event>
-            <p-card [header]="event.institution" [subheader]="event.date" class="p-3 md:p-4">
-                <div class="flex flex-column md:flex-row gap-3 md:gap-4 align-items-center md:align-items-start">
-                    
-                    <!-- Image on the left side, full-width on mobile and fixed-width on desktop -->
-                    <div class="w-full md:w-20rem">
-                        <img *ngIf="event.image" [src]="'assets/images/product/' + event.image" 
-                             [alt]="event.name" 
-                             class="shadow-2 border-round w-full" />
-                    </div>
-
-                    <!-- Content section -->
-                    <div class="flex flex-column w-full">
-                        <p class="text-center md:text-left font-bold text-lg mb-2">{{ event.credential }}</p>
-                        <p class="text-center md:text-left line-height-3 mb-3">{{ event.text }}</p>
-                        
-                        <!-- Skills section with custom styles -->
-                        <div class="skills-container">
-                            <ul class="skills-list">
-                                <li *ngFor="let skill of event.skills" class="skill-item">
-                                    <i class="pi pi-circle-on skill-icon" [ngStyle]="{ 'color': event.color }"></i> 
-                                    <span>{{ skill }}</span>
-                                </li>
-                            </ul>
+    <div [ngClass]="{ 'timeline-layout': !isMobile, 'stack-layout': isMobile }" class="education-container">
+        <ng-container *ngIf="!isMobile">
+            <!-- PrimeNG Timeline for Non-Mobile Screens -->
+            <p-timeline [value]="events" align="alternate" styleClass="customized-timeline">
+                <ng-template pTemplate="marker" let-event>
+                    <span
+                        class="flex align-items-center justify-content-center text-white border-circle shadow-2 w-3rem h-3rem md:w-2rem md:h-2rem"
+                        [style.backgroundColor]="event.color">
+                        <i [ngClass]="event.icon" class="text-xl md:text-lg"></i>
+                    </span>
+                </ng-template>
+                <ng-template pTemplate="content" let-event>
+                    <p-card [header]="event.institution" [subheader]="event.date" class="p-3 md:p-4">
+                        <div
+                            class="flex flex-column md:flex-row gap-3 md:gap-4 align-items-center md:align-items-start">
+                            <div class="w-full md:w-20rem">
+                                <img *ngIf="event.image" [src]="'assets/images/product/' + event.image"
+                                    [alt]="event.name" class="shadow-2 border-round w-full" />
+                            </div>
+                            <div class="flex flex-column w-full">
+                                <p class="text-center md:text-left font-bold text-lg mb-2">{{ event.credential }}</p>
+                                <p class="text-center md:text-left line-height-3 mb-3">{{ event.text }}</p>
+                                <div class="skills-container">
+                                    <ul class="skills-list">
+                                        <li *ngFor="let skill of event.skills" class="skill-item">
+                                            <i class="pi pi-circle-on skill-icon"
+                                                [ngStyle]="{ 'color': event.color }"></i>
+                                            <span>{{ skill }}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <p class="line-height-3 my-3 text-center md:text-left">{{ event.text1 }}</p>
+                                <div class="flex justify-content-center md:justify-content-start">
+                                    <button pButton label="Read more" class="p-button-outlined mt-3"
+                                        (click)="goToLink(event.link)">
+                                    </button>
+                                </div>
+                            </div>
                         </div>
+                    </p-card>
+                </ng-template>
+            </p-timeline>
+        </ng-container>
 
-                        <p class="line-height-3 my-3 text-center md:text-left">{{ event.text1 }}</p>
-
-                        <!-- Button, centered on mobile and left-aligned on larger screens -->
-                        <div class="flex justify-content-center md:justify-content-start">
-                            <button pButton 
-                                    label="Read more" 
-                                    class="p-button-outlined mt-3" 
+        <ng-container *ngIf="isMobile">
+            <!-- Stack Layout for Mobile Screens -->
+            <div *ngFor="let event of events" class="education-card">
+                <p-card [header]="event.institution" [subheader]="event.date" class="p-3 md:p-4">
+                    <div class="flex flex-column md:flex-row gap-3 md:gap-4 align-items-center md:align-items-start">
+                        <div class="w-full">
+                            <img *ngIf="event.image" [src]="'assets/images/product/' + event.image" [alt]="event.name"
+                                class="shadow-2 border-round w-full" />
+                        </div>
+                        <div class="flex flex-column w-full">
+                            <p class="text-center md:text-left font-bold text-lg mb-2">{{ event.credential }}</p>
+                            <p class="text-center md:text-left line-height-3 mb-3">{{ event.text }}</p>
+                            <div class="skills-container">
+                                <ul class="skills-list">
+                                    <li *ngFor="let skill of event.skills" class="skill-item">
+                                        <i class="pi pi-circle-on skill-icon" [ngStyle]="{ 'color': event.color }"></i>
+                                        <span>{{ skill }}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <p class="line-height-3 my-3 text-center md:text-left">{{ event.text1 }}</p>
+                            <div class="flex justify-content-center">
+                                <button pButton label="Read more" class="p-button-outlined mt-3"
                                     (click)="goToLink(event.link)">
-                            </button>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </p-card>
-        </ng-template>
-    </p-timeline>
+                </p-card>
+            </div>
+        </ng-container>
+    </div>
 </div>

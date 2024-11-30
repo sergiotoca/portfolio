@@ -37,3 +37,21 @@
 .skill-item:hover .skill-icon {
     color: #FF4081; /* Change icon color on hover to give a vibrant effect */
 }
+
+.experience-container.timeline-layout {
+    display: block; /* Default timeline layout */
+}
+
+.experience-container.stack-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Space between cards */
+}
+
+.experience-card {
+    margin-bottom: 1.5rem;
+}
+
+.skill-icon {
+    margin-right: 0.5rem;
+}

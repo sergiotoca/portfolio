@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { PrimeIcons } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
@@ -21,6 +21,13 @@ import { TimelineModule } from 'primeng/timeline';
 export class EducationComponent {
 
   events: any[] = [];
+
+  isMobile: boolean = window.innerWidth <= 768;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.isMobile = window.innerWidth <= 768;
+  }
 
   ngOnInit() {
     this.events = [

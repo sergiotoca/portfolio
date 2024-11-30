@@ -109,8 +109,8 @@
             </div>
             <div id="skills" class="my-6 md:my-8 ">
                 <span class="text-900 font-bold text-5xl mb-4 text-center block">Skills</span>
-                <div class="skills-grid grid">
-                    <div class="skill-item xl:col-2 lg:col-4 md:col-4 sm:col-8 transition-duration-500 text-center" *ngFor="let skill of skills" (mouseenter)="startHover(skill)" (mouseleave)="endHover(skill)">
+                <div class="skills-grid grid gap-2 justify-content-center">
+                    <div class="skill-item xl:col-2 lg:col-4 md:col-8 sm:col-8 transition-duration-500 text-center" *ngFor="let skill of skills" (mouseenter)="startHover(skill)" (mouseleave)="endHover(skill)">
                         <span class="text-900 text-lg font-semibold mb-2 block">{{ skill.name }}</span>
                         <p-knob [(ngModel)]="skill.hoverValue" valueTemplate="{value}%" [readonly]="true" [strokeWidth]="2" [size]="90"></p-knob>
                     </div>
